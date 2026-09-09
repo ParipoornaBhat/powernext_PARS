@@ -1,0 +1,8 @@
+Metric,Value
+number_of_records_analysed,350
+number_of_abnormal_records_identified,46
+minimum_predicted_reference_parameter,13.0298
+maximum_predicted_reference_parameter,57.4453
+average_predicted_reference_parameter,26.3912
+three_test_ids_requiring_highest_attention,"TST-0258, TST-0142, TST-0178"
+methodology_explanation,"We formulated a physics-grounded verification framework coupling electro-thermal conservation with gradient-boosted ensemble modeling. First, physical residual boundaries between applied load (V, I) and primary terminal sensors (S1, S2, S3) detect sensor dropouts and physical spikes while preserving genuine operating regimes, combined with operational collision auditing. Auxiliary sensor S4 was isolated as uncorrelated ambient noise. Second, a cross-validated ensemble of LightGBM, Gradient Boosting, and ExtraTrees trained on verified records predicts the critical hotspot reference parameter with high thermodynamic fidelity."
