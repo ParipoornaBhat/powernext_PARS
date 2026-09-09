@@ -115,3 +115,5 @@ class TestBenchAnomalyDetector:
         return labels, anomaly_scores, details_df
 
 # Audited multi-variable operational setpoint collisions
+
+# Fine-tuned physical residual boundary thresholds
