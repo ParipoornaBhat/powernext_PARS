@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.turbo/
+dist/
+.next/
+out/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+.venv/
+env/
+venv/
+.pytest_cache/
+
+# System & IDE
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Internal tool configurations
+/.internal

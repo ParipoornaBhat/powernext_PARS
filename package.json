@@ -1,0 +1,19 @@
+{
+  "name": "powernext-pars",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "ml:pipeline": "uv run --python 3.12 --with-requirements ml/requirements.txt python ml/run_pipeline.py",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  }
+}
