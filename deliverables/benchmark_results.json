@@ -1,0 +1,116 @@
+{
+    "total_verified_records": 866,
+    "cross_validation_folds": 5,
+    "split_seed": 42,
+    "benchmark_table": [
+        {
+            "model": "Linear Regression",
+            "r2_score": 0.863,
+            "rmse": 3.9735,
+            "mae": 3.3696,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "Ridge Regression",
+            "r2_score": 0.8631,
+            "rmse": 3.9721,
+            "mae": 3.3685,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "Random Forest",
+            "r2_score": 0.9894,
+            "rmse": 1.1055,
+            "mae": 0.6251,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "Gradient Boosting",
+            "r2_score": 0.9944,
+            "rmse": 0.8058,
+            "mae": 0.494,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "LightGBM Regressor",
+            "r2_score": 0.991,
+            "rmse": 1.0171,
+            "mae": 0.5856,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "Extra Trees Regressor",
+            "r2_score": 0.9911,
+            "rmse": 1.0123,
+            "mae": 0.537,
+            "status": "Baseline/Candidate"
+        },
+        {
+            "model": "PARS Ensemble (LGBM+GBR+ETR)",
+            "r2_score": 0.9936,
+            "rmse": 0.8599,
+            "mae": 0.4735,
+            "status": "Optimal Champion"
+        }
+    ],
+    "feature_group_ablation": [
+        {
+            "feature_group": "base_raw_features",
+            "n_features": 8,
+            "features": [
+                "Applied_Voltage_kV",
+                "Load_Current_A",
+                "Ambient_Temperature_C",
+                "Test_Duration_min",
+                "Sensor_S1",
+                "Sensor_S2",
+                "Sensor_S3",
+                "Sensor_S4"
+            ],
+            "r2_score": 0.9924,
+            "rmse": 0.9358,
+            "mae": 0.5078
+        },
+        {
+            "feature_group": "engineered_physical_features",
+            "n_features": 5,
+            "features": [
+                "Power_Proxy_kVA",
+                "Terminal_TempRise_Mean",
+                "Temp_Gradient_S3_S1",
+                "Temp_Gradient_S2_S1",
+                "Ambient_Plus_Terminal"
+            ],
+            "r2_score": 0.9773,
+            "rmse": 1.6193,
+            "mae": 1.0794
+        },
+        {
+            "feature_group": "full_feature_set",
+            "n_features": 13,
+            "features": [
+                "Applied_Voltage_kV",
+                "Load_Current_A",
+                "Ambient_Temperature_C",
+                "Test_Duration_min",
+                "Sensor_S1",
+                "Sensor_S2",
+                "Sensor_S3",
+                "Sensor_S4",
+                "Power_Proxy_kVA",
+                "Terminal_TempRise_Mean",
+                "Temp_Gradient_S3_S1",
+                "Temp_Gradient_S2_S1",
+                "Ambient_Plus_Terminal"
+            ],
+            "r2_score": 0.9936,
+            "rmse": 0.8599,
+            "mae": 0.4735
+        }
+    ],
+    "champion_model": "Gradient Boosting",
+    "conformal_interval_margin_deg_C": 1.4372,
+    "conformal_meta": {
+        "source": "pipeline_calibrated_margin"
+    }
+}

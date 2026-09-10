@@ -8,7 +8,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "ml:pipeline": "uv run --python 3.12 --with-requirements ml/requirements.txt python ml/run_pipeline.py",
+    "ml:pipeline": "uv --system-certs run --python 3.12 --with-requirements ml/requirements.txt python ml/run_pipeline.py",
     "prepare": "husky"
   },
   "devDependencies": {

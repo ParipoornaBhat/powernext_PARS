@@ -1,0 +1,12 @@
+{
+    "method": "split_conformal_absolute_residual_5fold_oof",
+    "alpha": 0.05,
+    "nominal_coverage": 0.95,
+    "n_calibration_residuals": 866,
+    "quantile_rank_k": 824,
+    "quantile_level": 0.9515011547344111,
+    "mean_abs_oof_error_deg_C": 0.4734723699414298,
+    "median_abs_oof_error_deg_C": 0.286190832918491,
+    "conformal_margin_deg_C": 1.4371678043135248,
+    "interval_width_deg_C": 2.8743356086270495
+}

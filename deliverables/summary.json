@@ -15,23 +15,61 @@
             "anomaly_score": 22.54390768391516,
             "validity": "Invalid",
             "predicted_ref": 44.4297,
-            "reason": "Sensor_S3 physical deviation (22.54 deg C > threshold 1.25)"
+            "reason": "Sensor_S3 physical deviation (22.54 deg C > threshold 1.25)",
+            "fault_type": "Sensor Dropout",
+            "fault_sensor": "Sensor_S3",
+            "fault_severity": "Critical",
+            "fault_confidence": "100.0% (Z=56.32, residual=22.54 C)"
         },
         {
             "test_id": "TST-0142",
             "anomaly_score": 20.767036869624427,
             "validity": "Invalid",
             "predicted_ref": 45.7553,
-            "reason": "Sensor_S3 physical deviation (20.77 deg C > threshold 1.25)"
+            "reason": "Sensor_S3 physical deviation (20.77 deg C > threshold 1.25)",
+            "fault_type": "Sensor Dropout",
+            "fault_sensor": "Sensor_S3",
+            "fault_severity": "Critical",
+            "fault_confidence": "100.0% (Z=51.88, residual=20.77 C)"
         },
         {
             "test_id": "TST-0178",
             "anomaly_score": 17.085642472993527,
             "validity": "Invalid",
             "predicted_ref": 16.3536,
-            "reason": "Sensor_S1 physical deviation (17.09 deg C > threshold 1.25)"
+            "reason": "Sensor_S1 physical deviation (17.09 deg C > threshold 1.25)",
+            "fault_type": "Sensor Spike",
+            "fault_sensor": "Sensor_S1",
+            "fault_severity": "Critical",
+            "fault_confidence": "100.0% (Z=65.26, residual=17.09 C)"
         }
     ],
     "methodology_explanation": "We formulated a physics-grounded verification framework coupling electro-thermal conservation with gradient-boosted ensemble modeling. First, physical residual boundaries between applied load (V, I) and primary terminal sensors (S1, S2, S3) detect sensor dropouts and physical spikes while preserving genuine operating regimes, combined with operational collision auditing. Auxiliary sensor S4 was isolated as uncorrelated ambient noise. Second, a cross-validated ensemble of LightGBM, Gradient Boosting, and ExtraTrees trained on verified records predicts the critical hotspot reference parameter with high thermodynamic fidelity.",
-    "explanation_word_count": 78
+    "explanation_word_count": 78,
+    "conformal_prediction_margin_deg_C": 1.4372,
+    "conformal_interval_width_deg_C": 2.8744,
+    "conformal_calibration": {
+        "method": "split_conformal_absolute_residual_5fold_oof",
+        "alpha": 0.05,
+        "nominal_coverage": 0.95,
+        "n_calibration_residuals": 866,
+        "quantile_rank_k": 824,
+        "quantile_level": 0.9515011547344111,
+        "mean_abs_oof_error_deg_C": 0.4734723699414298,
+        "median_abs_oof_error_deg_C": 0.286190832918491,
+        "conformal_margin_deg_C": 1.4371678043135248,
+        "interval_width_deg_C": 2.8743356086270495
+    },
+    "fault_type_distribution": {
+        "None": 277,
+        "Sensor Dropout": 17,
+        "Genuine High-Temperature Operation": 17,
+        "Sensor Spike": 8,
+        "Duplicate Setpoint Conflict": 8,
+        "Other Sensor Anomaly": 7,
+        "Calibration Drift": 7,
+        "Missing Critical Sensor": 6,
+        "Multi-Sensor Correlation Anomaly": 3
+    },
+    "cross_sensor_inconsistent_count": 35
 }
