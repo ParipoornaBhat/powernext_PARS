@@ -168,11 +168,8 @@ class ReferenceParameterPredictor:
                 'conformal_margin_deg_C': float(margin),
                 'interval_width_deg_C': float(2.0 * margin)
             }
-        elif self.conformal_margin is None:
-            raise ValueError(
-                "Conformal margin is not calibrated. Call fit(..., calibrate_conformal=True) "
-                "or assign a previously computed conformal_margin before predict_with_intervals."
-            )
+        elif self.conformal_margin is not None:
+            pass  # Retain pre-assigned conformal margin
 
         return self
 
